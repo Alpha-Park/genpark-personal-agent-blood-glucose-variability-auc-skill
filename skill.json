@@ -1,0 +1,23 @@
+{
+  "name": "genpark-personal-agent-blood-glucose-variability-auc-skill",
+  "version": "1.0.0",
+  "description": "Calculates CGM glycemic variability (%CV), Mean Amplitude of Glycemic Excursions (MAGE), Time in Range, and postprandial iAUC stabilization protocols.",
+  "tools": [
+    {
+      "name": "calculate_cgm_glycemic_variability",
+      "description": "Calculates %CV, MAGE excursion amplitude, Time in Range, and iAUC from CGM readings.",
+      "parameters": {
+        "glucose_readings_mg_dl": "list of floats",
+        "sampling_interval_minutes": "float (optional, default 15.0)"
+      }
+    },
+    {
+      "name": "prescribe_glycemic_stabilization_protocol",
+      "description": "Prescribes food sequencing, GLUT4 ambulation, and acetic acid protocols to blunt spikes.",
+      "parameters": {
+        "cv_percentage": "float",
+        "peak_glucose_mg_dl": "float (optional, default 160.0)"
+      }
+    }
+  ]
+}
